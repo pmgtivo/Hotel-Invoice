@@ -1,0 +1,74 @@
+{
+  "applications": "*",
+  "changelogDate": "20230805063306",
+  "entityTableName": "bill",
+  "fields": [
+    {
+      "fieldName": "tableNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cgst",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sgst",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isParcel",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "parcelCharges",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "adjustAmount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "discountPercentage",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paidBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createDateTime",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "name": "Bill",
+  "relationships": [
+    {
+      "otherEntityName": "billItems",
+      "otherEntityRelationshipName": "bill",
+      "relationshipName": "items",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "hotel",
+      "otherEntityRelationshipName": "bill",
+      "relationshipName": "hotel",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

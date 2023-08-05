@@ -1,0 +1,59 @@
+
+entity Hotel {
+    name String required,
+    address String,
+    contact String,
+    ownerName String,
+    ownerContact String,
+    gstNo String,
+    isVeg Boolean,
+    logo Blob
+}
+
+entity Menu {
+	name String required,
+    price String required,
+    description String,
+    isVeg Boolean,
+    itemAvailable Boolean
+}
+
+entity BillItems {
+   itemCount Integer
+   amount Integer
+}
+
+entity Bill {
+    tableNo String,
+    customerName String,
+    customerContact String,
+    cgst String,
+    sgst String,
+    totalAmount Integer required,
+    isParcel Boolean,
+    parcelCharges Integer,
+    adjustAmount Integer,
+    discountPercentage Double,
+    customerContact String,
+    paidBy String,
+    createDateTime ZonedDateTime
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Hotel{menu} to Menu{hotel}
+    Bill{items} to BillItems{bill}
+    Hotel{bill} to Bill{hotel}
+}
+
+// Set pagination options
+// paginate Menu with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20230805063308",
+  "entityTableName": "hotel",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ownerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ownerContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gstNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isVeg",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "name": "Hotel",
+  "relationships": [
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "hotel",
+      "relationshipName": "menu",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "bill",
+      "otherEntityRelationshipName": "hotel",
+      "relationshipName": "bill",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

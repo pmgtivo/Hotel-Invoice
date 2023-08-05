@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230805063307",
+  "entityTableName": "menu",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isVeg",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "itemAvailable",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Menu",
+  "relationships": [
+    {
+      "otherEntityName": "hotel",
+      "otherEntityRelationshipName": "menu",
+      "relationshipName": "hotel",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
